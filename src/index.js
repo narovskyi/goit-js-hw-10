@@ -31,6 +31,7 @@ function onSearchBoxInput() {
     fetchCountries(inputValue)
         .then(res => {
             if (res.length > 10) {
+                clearSpace();
                 Notify.info("Too many matches found. Please enter a more specific name.");
             } else if (res.length <= 10 && res.length >= 2) {
                 renderCountriesList(res);
